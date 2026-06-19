@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d12;
+      --surface: #14141f;
+      --border: #232335;
+      --text: #f1f1f6;
+      --text-dim: #9a9ab0;
+      --accent: #a78bfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    header {
+      max-width: 1200px;
+      margin: 4rem auto 2rem auto;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    h1 span { color: var(--accent); }
+    p.subtitle { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin-bottom: 4rem; }
+    
+    /* Main Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 6rem auto;
+    }
+    .category-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .category-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .image-container {
+      aspect-ratio: 4/3;
+      background: #1a1a26;
+      overflow: hidden;
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-meta { padding: 1.5rem; }
+    .card-meta h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 0.25rem; }
+    .card-meta p { color: var(--text-dim); font-size: 0.875rem; }
+    
+    footer { text-align: center; color: var(--text-dim); font-size: 0.85rem; padding-top: 4rem; border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jay<span>.</span> Portfolio</h1>
+    <p class="subtitle">Selected works spanning real-time simulation environments, technical illustration, and graphic asset design.</p>
+  </header>
+
+  <main class="portfolio-grid">
+    
+    <!-- CATEGORY: REAL TIME 3D -->
+    <a href="gallery.html?cat=realtime" class="category-card">
+      <div class="image-container">
+        <img src="images/thumb_3d.jpg" alt="Real Time 3D">
+      </div>
+      <div class="card-meta">
+        <h2>Real Time 3D</h2>
+        <p>View modular assets and environments →</p>
+      </div>
+    </a>
+
+    <!-- CATEGORY: GRAPHIC DESIGN -->
+    <a href="gallery.html?cat=graphic" class="category-card">
+      <div class="image-container">
+        <img src="images/thumb_graphic.jpg" alt="Graphic Design">
+      </div>
+      <div class="card-meta">
+        <h2>Graphic Design</h2>
+        <p>View print layouts and identity packages →</p>
+      </div>
+    </a>
+
+    <!-- CATEGORY: SCULPTS -->
+    <a href="gallery.html?cat=sculpts" class="category-card">
+      <div class="image-container">
+        <img src="images/thumb_sculpts.jpg" alt="Sculpts">
+      </div>
+      <div class="card-meta">
+        <h2>Sculpts</h2>
+        <p>View organic and hard-surface models →</p>
+      </div>
+    </a>
+
+    <!-- CATEGORY: INFOGRAPHY -->
+    <a href="gallery.html?cat=infography" class="category-card">
+      <div class="image-container">
+        <img src="images/thumb_info.jpg" alt="Infography">
+      </div>
+      <div class="card-meta">
+        <h2>Infography</h2>
+        <p>View technical illustrations and data data grids →</p>
+      </div>
+    </a>
+
+    <!-- CATEGORY: ILLUSTRATION -->
+    <a href="gallery.html?cat=illustration" class="category-card">
+      <div class="image-container">
+        <img src="images/thumb_illustration.jpg" alt="Illustration">
+      </div>
+      <div class="card-meta">
+        <h2>Illustration</h2>
+        <p>View 2D raster and vector production assets →</p>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Jay. Hosted entirely via GitHub Pages.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d12;
+      --surface: #14141f;
+      --border: #232335;
+      --text: #f1f1f6;
+      --text-dim: #9a9ab0;
+      --accent: #a78bfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; padding: 2rem; }
+    
+    nav.back-nav { max-width: 1200px; margin: 2rem auto; }
+    nav.back-nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; }
+    nav.back-nav a:hover { color: var(--accent); }
+
+    .gallery-container { max-width: 1200px; margin: 0 auto 6rem auto; display: none; }
+    .gallery-container.active { display: block; }
+
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    
+    .display-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+    .item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .item img { width: 100%; height: auto; display: block; }
+    .item-info { padding: 1rem; }
+    .item-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; margin-bottom: 0.25rem; font-weight: 500; }
+    .item-info p { color: var(--text-dim); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="back-nav">
+    <a href="index.html">← Back to Main Portfolio</a>
+  </nav>
+
+  <!-- =========================================================
+       SECTION: REAL TIME 3D
+       ========================================================= -->
+  <div id="realtime" class="gallery-container">
+    <h1>Real Time 3D</h1>
+    <div class="display-grid">
+      
+      <div class="item">
+        <img src="images/3d_asset1.jpg" alt="Asset Title">
+        <div class="item-info">
+          <h3>Spacecraft Cockpit Hull</h3>
+          <p>Optimized low-poly mesh layout with custom shader mapping.</p>
+        </div>
+      </div>
+
+      <!-- PASTE NEW 3D ITEMS DIRECTLY BELOW THIS LINE -->
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION: GRAPHIC DESIGN
+       ========================================================= -->
+  <div id="graphic" class="gallery-container">
+    <h1>Graphic Design</h1>
+    <div class="display-grid">
+      
+      <div class="item">
+        <img src="images/design_asset1.jpg" alt="Design Title">
+        <div class="item-info">
+          <h3>Editorial Layout System</h3>
+          <p>Text-heavy page grid structural alignment template.</p>
+        </div>
+      </div>
+
+      <!-- PASTE NEW GRAPHIC ITEMS DIRECTLY BELOW THIS LINE -->
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION: SCULPTS
+       ========================================================= -->
+  <div id="sculpts" class="gallery-container">
+    <h1>Sculpts</h1>
+    <div class="display-grid">
+      
+      <div class="item">
+        <img src="images/sculpt_asset1.jpg" alt="Sculpt Title">
+        <div class="item-info">
+          <h3>Anatomical Structure Blockout</h3>
+          <p>High-density digital clay form development.</p>
+        </div>
+      </div>
+
+      <!-- PASTE NEW SCULPT ITEMS DIRECTLY BELOW THIS LINE -->
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION: INFOGRAPHY
+       ========================================================= -->
+  <div id="infography" class="gallery-container">
+    <h1>Infography</h1>
+    <div class="display-grid">
+      
+      <div class="item">
+        <img src="images/info_asset1.jpg" alt="Infography Title">
+        <div class="item-info">
+          <h3>Industrial Automation Grid</h3>
+          <p>Exploded view technical illustration outlining data flows.</p>
+        </div>
+      </div>
+
+      <!-- PASTE NEW INFOGRAPHY ITEMS DIRECTLY BELOW THIS LINE -->
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION: ILLUSTRATION
+       ========================================================= -->
+  <div id="illustration" class="gallery-container">
+    <h1>Illustration</h1>
+    <div class="display-grid">
+      
+      <div class="item">
+        <img src="images/ill_asset1.jpg" alt="Illustration Title">
+        <div class="item-info">
+          <h3>Vector Narrative Vignette</h3>
+          <p>Flat color hard-edge vector layout asset.</p>
+        </div>
+      </div>
+
+      <!-- PASTE NEW ILLUSTRATION ITEMS DIRECTLY BELOW THIS LINE -->
+
+    </div>
+  </div>
+
+  <script>
+    // Tiny script handles routing based on URL request parameter
+    const params = new URLSearchParams(window.location.search);
+    const targetCat = params.get('cat') || 'realtime';
+    const activeSection = document.getElementById(targetCat);
+    if (activeSection) {
+      activeSection.classList.add('active');
+      document.title = activeSection.querySelector('h1').textContent + " — Gallery";
+    } else {
+      document.getElementById('realtime').classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
